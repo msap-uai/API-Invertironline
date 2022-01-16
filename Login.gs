@@ -3,14 +3,11 @@ var cache = CacheService.getUserCache();
 /**SOLICITA LA CLAVE PARA QUE NO QUEDE EN EL CODIGO*/
 function onOpen(){
   var ui = SpreadsheetApp.getUi();
-  var response = ui.prompt('LOGIN', 'Ingrese el usuario?', ui.ButtonSet.YES_NO);
-  // Process the user's response.
+  var response = ui.prompt('LOGIN', 'Ingrese el usuario:', ui.ButtonSet.YES_NO);
   if (response.getSelectedButton() == ui.Button.YES) {
     var user = response.getResponseText();
-    //Logger.log(user);
-    var response = ui.prompt('LOGIN', 'Ingrese su contraseña?', ui.ButtonSet.YES_NO);
+    var response = ui.prompt('LOGIN', 'Ingrese su contraseña:', ui.ButtonSet.YES_NO);
     var pass = response.getResponseText();
-    //Logger.log(pass);
     token(user,pass);
     ui.showModalDialog(html, 'Se ha logeado con exito');
   } else {
@@ -25,7 +22,6 @@ function onOpen(){
 * @customfunction
 **/
 function token(user,pass) {
-  /** hacer un cuadro de dialogo para poner el pass y user */
   const urlLogin = 'https://api.invertironline.com/token'
   const headers = {'Content-Type': 'application/x-www-form-urlencoded'};
   const payload = 'username='+user+'&password='+pass+'&grant_type=password';
@@ -69,7 +65,6 @@ function checkToken(){
   else if( date > expires ){
     refresh_token(); // si el token venció lo renueva
   }
-    
 }
 
 
