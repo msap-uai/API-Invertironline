@@ -1,4 +1,4 @@
-[![N|Solid](https://iolwebsite.cdn.prismic.io/iolwebsite/e9bd861f-c52d-415c-9107-fe39a8cb828a_Logo_6.svg)
+![N|Solid](https://iolwebsite.cdn.prismic.io/iolwebsite/e9bd861f-c52d-415c-9107-fe39a8cb828a_Logo_6.svg)
 
 
 # API Invertironline
